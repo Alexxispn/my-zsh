@@ -78,7 +78,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-z)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -144,6 +144,20 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=183'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9'
 
 
-eval "$(starship init zsh)"
 
-source /etc/bash_completion.d/az
+source ~/.azure/az.completion
+
+# pnpm
+export PNPM_HOME="/home/winvi/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+# bun completions
+[ -s "/home/winvi/.bun/_bun" ] && source "/home/winvi/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/winvi/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
