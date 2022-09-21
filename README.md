@@ -131,7 +131,7 @@
 
 <br>
 
-If you want yo know more about my WSL or my ZSH, I highly recommend you to visit Manz's Blog, he has a lot of good
-content about WSL and ZSH.
+If you want yo know more about WSL or ZSH, I highly recommend you to visit Manz's Blog, he has a lot of good
+content about that.
 
-[Manz blog bout CLI & ZSH](https://terminaldelinux.com/terminal/)
+[Manz blog bout WSL & ZSH](https://terminaldelinux.com/terminal/)
