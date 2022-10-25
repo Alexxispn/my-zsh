@@ -78,7 +78,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-z)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-z vue)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -107,7 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias python="python3.8"
 alias cat="batcat"
+alias c.="idea ."
+alias pyenv="deactivate || source .venv/bin/activate"
 alias tree="tree -L 1 -I node_modules"
 alias movehome="cd /mnt/c/Users/Winvito"
 alias color='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
@@ -116,6 +120,15 @@ if [ -x "$(command -v colorls)" ]; then
     alias ls="colorls"
     alias la="colorls -al"
 fi
+
+#Docker alias
+#alias dkwatch="docker events --filter 'type=container' --format 'Type={{.Type}}     Status={{.Status}} ID={{.ID}}'"
+#alias dkrmall="docker rm -f $(docker ps -a -q)"
+#alias dkrmallimg="docker rmi $(docker images -q)"
+#alias dkklall="docker kill $(docker ps -q)"
+# List all containers by status using custom format
+#alias dkls='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -161,3 +174,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+
+# Koyeb CLI
+export PATH=$HOME/.koyeb/bin:$PATH
+
